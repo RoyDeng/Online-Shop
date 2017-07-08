@@ -4,7 +4,6 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>reflush</title>
 	</head>
 	<body>
 	<meta http-equiv='refresh' content='0;url=<%=context %>/manager/listproduct'>
