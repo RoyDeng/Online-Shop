@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+	<class name="mobile.shop.model.User" table="user" discriminator-value="common">
+		<id name="id" column="id" type="long">
+			<generator class="increment" />
+		</id>
+		<discriminator column="type" type="string"></discriminator>
+		<property name="username" unique="true" not-null="true"	length="32" column="username" />
+		<property name="password" not-null="true" length="16" column="password" />
+		<property name="name" column="name" />
+		<property name="sex" column="sex" />
+		<property name="birth" column="birth" />
+		<property name="email" column="email" />
+		<property name="phone" column="phone" />
+		<property name="mobile" column="mobile" />
+		<property name="address" column="address" />
+		<subclass name="mobile.shop.model.Administrator" discriminator-value="admin" >
+			<property name="workNo" column="workNo" />
+		</subclass>
+	</class>
+</hibernate-mapping>
+

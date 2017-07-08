@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="mobile.shop.model.Product" table="product">
+		<id name="id" column="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="name" not-null="true" length="50" column="name"/>
+		<property name="imageSrc" length="200" column="imageSrc" />
+		<property name="price" type="double" column="price" />
+		<property name="description" length="500" column="description" />
+		<property name="stock" type="int" column="stock" />
+	</class>
+</hibernate-mapping>
